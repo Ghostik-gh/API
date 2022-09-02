@@ -5,10 +5,12 @@ import styles from './App.module.scss';
 
 const App: FC = () => {
   return (
-    <div className={styles.container}>
+    <>
       <SideBar />
-      <Outlet />
-    </div>
+      <div className={styles.container}>
+        <Outlet />
+      </div>
+    </>
   );
 };
 

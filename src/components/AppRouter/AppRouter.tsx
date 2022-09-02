@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NotFound } from '../../pages/NotFound/NotFound';
-import { RandomAnimal } from '../../pages/RandomAnimal';
+import { RandomAnimal } from '../../pages/RandomAnimal/RandomAnimal';
 import { appRoutes, RouteNames } from '../../router';
 import App from '../App/App';
 

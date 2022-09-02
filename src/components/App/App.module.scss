@@ -1,6 +1,15 @@
 @import-normalize;
 .container{
-    width: 100vw;
     height: 100vh;
-    
+    margin-left: 250px;
+
+    @media (max-width: 710px) {
+        margin-left: 35%;
+    }
+
+    @media (max-width: 600px) {
+        display: flex;
+        margin-left: 0;
+        height: 60vh;
+    }
 }

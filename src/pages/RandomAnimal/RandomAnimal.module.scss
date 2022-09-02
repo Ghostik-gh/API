@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 600px) {
+        border-radius: 5rem;
+        height: 70vh;
+        width: 100vh;
+    }
+
+    h1{
+
+    }
+
+    img{
+        max-height: 80vh;
+        max-width: 100%;
+        
+        @media (max-width: 600px) {
+            border-radius: 5rem;
+            height: 60%;
+        }
+    }
+}
