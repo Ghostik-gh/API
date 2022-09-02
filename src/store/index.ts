@@ -1,14 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-
-import thunk from 'redux-thunk';
+import animalReducer from './reducers/animal/animalSlice';
 
 const rootReducer = combineReducers({
-  // Reducers here
+  animalReducer,
 });
 
 export const store = configureStore({
   reducer: { rootReducer },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

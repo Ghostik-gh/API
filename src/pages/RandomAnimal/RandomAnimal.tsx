@@ -1,40 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { randAnimalData } from '../../serviece/GetRandAnimal';
-import { Animal } from '../../types/RandAnimalTypes';
+import React, { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { animalFetch } from '../../store/reducers/animal/animalActionCreators';
 import styles from './RandomAnimal.module.scss';
 
-const defaultAnimal: Animal = {
-  name: 'Victoria Crowned Pigeon',
-  latin_name: 'Goura victoria',
-  animal_type: 'Bird',
-  active_time: 'Diurnal',
-  length_min: '2.2',
-  length_max: '2.4',
-  weight_min: '5',
-  weight_max: '5.5',
-  lifespan: '12',
-  habitat: 'Forest and swamp',
-  diet: 'Fruits, seeds, insects and snails',
-  geo_range: 'Northern New Guinea',
-  image_link:
-    'https://upload.wikimedia.org/wikipedia/commons/d/d2/Victoria_Crowned_Pigeon_CentralPark_Zoo.jpg',
-  id: 182,
-};
-
 export const RandomAnimal = () => {
-  const [animal, setAnimal] = useState<Animal>(defaultAnimal);
+  const dispatch = useAppDispatch();
+
+  const { animal, error, isLoading } = useAppSelector(
+    (state) => state.rootReducer.animalReducer
+  );
 
   useEffect(() => {
-    randAnimalData.then((res) => setAnimal(res.data));
+    dispatch(animalFetch());
+    // eslint-disable-next-line
   }, []);
 
   return (
     <>
       <div className={styles.container}>
-        <h1>
-          {animal.id}. {animal.name}
-        </h1>
-        <img src={animal.image_link} alt={animal.latin_name} />
+        {isLoading && <h1>Идет Загрузка</h1>}
+        {error && <h1>{error}</h1>}
+        {!error && !isLoading ? (
+          <>
+            <h1>
+              {animal.id}. {animal.name}
+            </h1>
+            <img src={animal.image_link} alt={animal.latin_name} />
+          </>
+        ) : null}
+        <button onClick={() => dispatch(animalFetch())}>New</button>
       </div>
     </>
   );
