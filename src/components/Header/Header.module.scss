@@ -1,5 +1,5 @@
 .header{
-    @apply fixed top-0 flex w-screen justify-center;
+    @apply fixed top-0 flex w-screen justify-center bg-white;
 
     .nav{
         @apply flex flex-col bg-center w-10/12 bg-slate-100 ;
@@ -10,11 +10,27 @@
         } 
 
         .top{
-            border-bottom: 1px solid;
+            @apply justify-between border-b-2 border-black;
+            > div{
+                @apply px-3;
+
+                > span{
+                    @apply underline cursor-pointer;
+                }
+            }
+            .title{
+                @apply text-xl
+            }
+            .city{
+                @apply text-lg
+            }
         }
 
         .bottom{
-            @apply text-link;
+            @apply text-link justify-around;
+            > span{
+                @apply px-3;
+            }
         }
         
     }

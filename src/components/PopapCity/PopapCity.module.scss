@@ -1,0 +1,21 @@
+.container{
+    @apply fixed flex top-0 left-0 w-screen h-screen bg-popap z-30 opacity-90 justify-center items-center;
+    
+    .window{
+        min-height: 300px;
+        min-width: 220px;
+        @apply bg-white opacity-100 rounded-xl shadow-xl;
+
+        .content{
+            @apply flex flex-col justify-center py-2 px-3 m-7 ;
+
+            > input{
+                @apply border-2 p-2 m-2 shadow-lg;
+            }
+
+            .title{
+                @apply text-xl opacity-100
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         link: '#3662ff',
+        popap: '#686b6e',
       },
     },
   },
