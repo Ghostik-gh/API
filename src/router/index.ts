@@ -8,7 +8,8 @@ export interface IRoute {
 }
 
 export enum RouteNames {
-  App = '/API/',
+  Api = '/API',
+  App = '/app/',
   Animal = 'animal',
 }
 
