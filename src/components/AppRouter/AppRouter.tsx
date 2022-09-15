@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from '../../pages/Home/Home';
 import { Layout } from '../../pages/Layout/Layout';
 import { NotFound } from '../../pages/NotFound/NotFound';
 import { RouteNames } from '../../router';
@@ -11,7 +12,7 @@ export const AppRouter: FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path={RouteNames.Api} element={<Layout />}>
-          <Route path="*" element={<NotFound />} />
+          <Route path={RouteNames.Api} element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
