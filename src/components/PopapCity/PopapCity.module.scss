@@ -19,3 +19,8 @@
         }
     }
 }
+
+.close{
+    @apply fixed right-5 top-5 z-50 text-black text-6xl cursor-pointer;
+
+}
