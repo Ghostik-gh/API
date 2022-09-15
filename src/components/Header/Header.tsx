@@ -14,10 +14,13 @@ export const Header: FC = () => {
     (state) => state.rootReducer.userReducer
   );
 
-  const [about, setAbout] = useState(false);
+  const [list, setList] = useState(false);
 
-  const handleMouseEvent = () => {
-    setAbout(true);
+  const handleMouseEnter = () => {
+    setList(true);
+  };
+  const handleMouseLeave = () => {
+    setList(false);
   };
   const ChangeCity = () => {
     dispatch(userSlice.actions.getCity());
@@ -29,24 +32,38 @@ export const Header: FC = () => {
       <div className={styles.header}>
         <div className={styles.nav}>
           <div className={styles.top}>
-            <div className={styles.title}>Covid-19 Statistic</div>
+            <div className={styles.title}>
+              <Link to={RouteNames.Api}>Covid-19 Statistic</Link>
+            </div>
             <div className={styles.city}>
               Your city is: <span onClick={ChangeCity}>{city}</span>
             </div>
           </div>
           <div className={styles.bottom}>
             <span
-              onMouseEnter={handleMouseEvent}
-              onMouseLeave={() => {
-                setAbout(false);
-              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
-              <Link to={RouteNames.Api}>Covid-19</Link>
-              {about ? (
-                <ul className={styles.about}>
-                  <li>1.</li>
-                  <li>2.</li>
-                  <li>3.</li>
+              {/* <Link to={RouteNames.Api}></Link> */}
+              About Covid ▼
+              {list ? (
+                <ul className={styles.list}>
+                  <li>
+                    <a href="#symptoms">1. Symptoms</a>
+                  </li>
+                  <li>
+                    <Link to={RouteNames.Paths}>2. Transmission paths</Link>
+                  </li>
+                  <li>
+                    <Link to={RouteNames.Prevention}>
+                      3. 8 steps for Prevention
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={RouteNames.Myths}>
+                      4. Myths about the coronavirus
+                    </Link>
+                  </li>
                 </ul>
               ) : null}
             </span>

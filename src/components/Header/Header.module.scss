@@ -1,8 +1,8 @@
 .header{
-    @apply fixed top-0 flex w-screen justify-center bg-white;
+    @apply fixed top-0 w-screen flex justify-center bg-white;
 
     .nav{
-        @apply flex flex-col bg-center w-10/12 bg-slate-100 ;
+        @apply flex flex-col bg-center w-screen bg-slate-100 md:w-10/12 z-40;
 
         
         .top, .bottom {
@@ -36,6 +36,10 @@
     }
 }
 
-.about{
-    position: fixed;
+.list{
+    @apply fixed p-5 shadow bg-slate-200;
+
+    li{
+        @apply text-black py-1;
+    }
 }
