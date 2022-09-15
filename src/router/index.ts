@@ -11,6 +11,10 @@ export enum RouteNames {
   Api = '/API',
   App = '/app/',
   Animal = 'animal',
+  Symptoms = '#symptoms',
+  Paths = 'paths',
+  Prevention = 'prevention',
+  Myths = 'myths',
 }
 
 // Проблема с типом component обычный route не принимает тип надо как то обернуть в <>

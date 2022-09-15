@@ -1,0 +1,9 @@
+.cv_grid__item{
+    width: 200px;
+    @apply m-3;
+
+    .cv_icon_card{
+        @apply flex flex-col items-center;
+        
+    }
+}

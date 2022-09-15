@@ -1,0 +1,17 @@
+.cv_section{
+    @apply m-auto w-screen md:w-10/12 ;
+    .cv_section_doc{
+        @apply flex mb-6;
+
+        .cv_section__title{
+            @apply text-5xl
+        }
+
+    }
+    .cv_section_subtitle{
+        @apply text-4xl;
+    }
+    .cv_grid{
+        @apply flex flex-wrap m-3 justify-evenly; 
+    }
+}
